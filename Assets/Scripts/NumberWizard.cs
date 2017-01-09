@@ -47,17 +47,14 @@ public class NumberWizard : MonoBehaviour {
 	}
 
 	void NextGuess () {
-		
-		//guess = (max + min) / 2;
-
-		guess = Random.Range (min, max);
-
-		//text.text = "Is it " + guess + "?";
-
-		text.text = guess.ToString ();
 
 		if (guessCount >= guessMax) {
 			SceneManager.LoadScene ("Win");
+		} else {
+			guess = Random.Range (min, max);
+			text.text = guess.ToString ();
+		}
+
 		}
 	}
-}
+
